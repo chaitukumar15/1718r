@@ -1,0 +1,24 @@
+{
+  "name": "1718r",
+  "version": "1.0.0",
+  "description": "node js class notes and code",
+  "main": "email.js",
+  "scripts": {
+    "start": "node login.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitukumar15/1718r.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitukumar15/1718r/issues"
+  },
+  "homepage": "https://github.com/chaitukumar15/1718r#readme",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
