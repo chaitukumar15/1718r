@@ -98,6 +98,8 @@ http://localhost:3000/products ->
 n HTTP status code is a 3-digit code sent by a server in response to a client's request made to the server. It indicates the result of the request and helps to inform the client about the outcome of their request. These codes are part of the HTTP protocol, which is used for communication between a client (like a web browser) and a server
 
 
+
+
 HTTP status codes are grouped into five categories based on the first digit of the code:
 
 1xx (Informational): These codes indicate that the request was received and is being processed.
