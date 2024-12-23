@@ -115,3 +115,27 @@ Example: 404 Not Found — The requested resource could not be found on the serv
 5xx (Server Error): These codes indicate that the server failed to fulfill a valid request, usually due to an error on the server's side.
 
 Example: 500 Internal Server Error — The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+
+...................................................
+
+routing :
+the process of managing how a web application responds to URL changes and what it shows users
+
+
+file  based  url
+
+
+resource based url 
+
+
+url module 
+
+
+parse(pathname) -> will take url ->(req.url)
+
+if(pathname=="/address"){
+    send-> "hi this is address"
+}else{
+     send-> "hi this is other things "
+}
