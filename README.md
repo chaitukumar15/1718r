@@ -95,7 +95,7 @@ http://localhost:3000/products ->
 
 
 
-n HTTP status code is a 3-digit code sent by a server in response to a client's request made to the server. It indicates the result of the request and helps to inform the client about the outcome of their request. These codes are part of the HTTP protocol, which is used for communication between a client (like a web browser) and a server
+ HTTP status code is a 3-digit code sent by a server in response to a client's request made to the server. It indicates the result of the request and helps to inform the client about the outcome of their request. These codes are part of the HTTP protocol, which is used for communication between a client (like a web browser) and a server
 
 
 
@@ -141,3 +141,137 @@ if(pathname=="/address"){
 }else{
      send-> "hi this is other things "
 }
+
+
+................................................
+
+Express.js is a minimal and flexible web application framework for Node.js. It provides a robust set of features to develop both web and mobile applications. Here's a deeper dive into Express.js
+
+rest vs soap  
+
+Common Use Cases:
+Web Apps: Building full-stack web applications with front-end frameworks (like React, Angular, or Vue) and Express for the back-end.
+RESTful APIs: Creating back-end services that communicate with front-end apps, mobile devices, or other systems via HTTP.
+Single-Page Applications (SPAs): Used as the back-end for SPAs, where Express handles data and client-side JavaScript handles the UI.
+
+
+
+
+
+
+In web development, params (short for parameters) are values that are passed into a web application through the URL, typically in the form of query parameters or route parameters. They are used to convey information from the client to the server or between different parts of an application. These parameters allow for dynamic content and behavior based on the data sent by the client.
+
+There are several types of parameters commonly used in web development:
+
+1. Route Parameters
+Route parameters are used within the URL path to capture values dynamically and make routes flexible. In a web application, you might define a route with placeholders that represent these parameters.
+Route Parameters:
+Are defined within the route path.
+Allow you to capture and use dynamic data in the URL.
+Are accessed through req.params in Express.js or other server frameworks.
+
+2. Query Parameters
+Query parameters are passed at the end of the URL after a question mark (?) and are used to pass small amounts of data. Query parameters are often used for filtering, pagination, or search.
+
+URL with Query Parameters: /search?query=javascript&limit=10
+
+
+3. Body Parameters (in POST requests)
+When submitting data via a POST request (often used for submitting forms or sending JSON data), parameters are sent in the request body rather than the URL.
+
+In HTML forms, data is often sent as body parameters with application/x-www-form-urlencoded or multipart/form-data encoding.
+In APIs, data is typically sent as JSON or XML in the request body.
+
+Body Parameters:
+Are typically sent in the body of POST, PUT, or PATCH requests.
+Can contain complex data (e.g., objects, arrays).
+Can be accessed through req.body in Express.js.
+
+
+4. Header Parameters
+Header parameters are part of the HTTP request headers. They are often used for passing authentication tokens, content type information, and other meta-data that should not be included in the URL or body.
+
+Header Parameters:
+Are part of the HTTP request headers.
+Are commonly used for authentication, content negotiation, and meta-data.
+
+
+
+
+..........................
+
+
+var express=require("express");
+
+
+var app=express();
+
+app.get("/",()=>{
+
+
+})
+
+app.get("/products",()=>{
+
+})
+
+app.listen(3000,()=>{
+     
+})
+
+
+..................
+
+mysql2
+
+npm install mysql2
+
+connected=mysql.createConnection({
+        host: 'localhost',      // Replace with your database host
+        user: 'yourUsername',   // Replace with your database username
+        password: 'yourPassword', // Replace with your password
+        database: 'yourDatabase' // Replace with your database name
+    });
+
+connected.connect((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("connected to mysql");
+  }
+});
+
+connected.query("SELECT * FROM dummy.users",(err,data)=>{
+  console.log(data);
+  
+})
+
+
+Prevents SQL Injection:
+
+SQL injection is a major security vulnerability where an attacker can manipulate the SQL query by injecting malicious code. This can lead to unauthorized access, data leaks, or even deletion of data.
+Using the ? placeholder ensures that the values you insert into the query are treated as data rather than part of the SQL syntax. The library automatically escapes and sanitizes the values to prevent malicious code from being executed.
+
+
+const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+
+
+SELECT * FROM users WHERE username = 'admin' OR '1'='1' AND password = 'anything'
+
+
+Improves Code Readability
+
+
+Makes Queries More Efficient
+
+
+Improves Code Readability
+
+
+jsonwebtoken
+
+{ expiresIn: '1h'/"1s" }
+
+const token = jwt.sign(payload, secretKey);
+
+const decoded = jwt.verify(token, secretKey);
