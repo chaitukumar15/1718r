@@ -82,6 +82,77 @@ app.get("/", (req, res) => {
 </html>`);
 });
 
+app.post("/login",(req,res)=>{
+
+    connection.query(`select *  from usersdata where user=?`,[req.body.user],(err,data)=>{
+
+        if(err){
+            res.send({
+                msg:err.message,
+                statuscode:400
+            })
+        }else{
+
+
+            if(data.length>0){
+            
+
+                bcrypt.compare(req.body.password,data[0].password,(err,result)=>{
+                 
+                    if(err){
+                        res.send({
+                            msg:err.message,
+                            statuscode:400
+                        })
+                    }else{
+
+
+                        var usercheck=req.body.user==data[0].user;
+
+                        if(usercheck && result){
+                            res.send({
+                                data:"success fully login",
+                                code:200
+                            })
+                        }else{
+                            res.send({
+                                data:"invalid cred",
+                                code:400
+                            }) 
+                        }
+                       
+                    }
+    //  res.send({
+    //                 msg:data,
+    //                 statuscode:200
+    //             })
+
+
+                })
+
+            }else{
+                res.send({
+                    msg:"please register and come",
+                    statuscode:400
+                })
+            }
+
+         
+
+
+        }
+
+
+
+    })
+
+// res.send(req.body)
+
+
+})
+
+
+
 app.listen(3009, () => {
   console.log("hi server has been staertted");
 });

@@ -275,3 +275,19 @@ jsonwebtoken
 const token = jwt.sign(payload, secretKey);
 
 const decoded = jwt.verify(token, secretKey);
+................................................
+
+
+mail-> 
+
+gmail -> 
+manage ur account 
+->
+security 
+->
+two factor authantication 
+->
+app pass-> 
+
+project -> 
+app passsword 
