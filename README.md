@@ -341,3 +341,14 @@ var transporter = nodemailer.createTransport({
 - Port 587 (secure, uses `STARTTLS`): `secure: false` (Gmail's preferred port for outgoing mail).
 - Port 465 (SSL encryption from the start): `secure: true`.
 - Port 25: Generally avoided due to being blocked by many ISPs.
+
+
+
+..............................
+
+const crypto = require('crypto');
+
+// Generate a random 256-bit (32-byte) key for HMAC
+const secretKey = crypto.randomBytes(32).toString('hex'); // Converts the bytes to a hexadecimal string
+
+console.log('Generated Secret Key:', secretKey);
